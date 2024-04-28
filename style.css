@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5; /* Warna latar belakang */
+}
+
+.container {
+  text-align: center;
+  background-color: #fff; /* Warna latar belakang kontainer */
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Bayangan */
+  width: 300px;
+}
+
+h2 {
+  color: #333; /* Warna teks judul */
+}
+
+input[type="text"],
+input[type="password"],
+button {
+  margin: 10px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box; /* Agar padding tidak menambah lebar */
+}
+
+button {
+  background-color: #000; /* Warna tombol */
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #333; /* Warna tombol saat dihover */
+}
+
+h1 {
+  margin: 10px;
+  font-size: 18px;
+}
+
+#logoutButton {
+  margin-top: 10px; /* Jarak antara tombol logout dan teks */
+}
+
+#adminText,
+#managerText,
+#operatorText,
+#basicText {
+  margin-top: 20px; /* Jarak antara teks dan tombol */
+}
