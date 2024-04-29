@@ -42,7 +42,18 @@ button:hover {
   background-color: #333;
 }
 
+h1 {
+  margin: 10px;
+  font-size: 18px;
+}
+
 #logoutButton {
   margin-top: 10px;
 }
 
+#adminText,
+#managerText,
+#operatorText,
+#basicText {
+  margin-top: 20px;
+}
