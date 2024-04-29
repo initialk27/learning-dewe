@@ -1,39 +1,42 @@
 function onLogin() {
-  // Memeriksa apakah kedua input telah diisi
+  var usernameInput = document.getElementById('usernameInput');
+  var passwordInput = document.getElementById('passwordInput');
+  var loginButton = document.getElementById('loginButton');
+  var logoutButton = document.getElementById('logoutButton');
+  var adminText = document.getElementById('adminText');
+  var managerText = document.getElementById('managerText');
+  var operatorText = document.getElementById('operatorText');
+  var basicText = document.getElementById('basicText');
+
   if (!usernameInput.value || !passwordInput.value) {
     alert("Silakan isi kedua field username dan password.");
-    return; // Menghentikan eksekusi jika salah satu input kosong
+    return;
   }
 
   localStorage.setItem("username", usernameInput.value);
-  logoutButton.style.display = "block"; // Menampilkan tombol logout setelah login berhasil
+  logoutButton.style.display = "block";
+
   if (usernameInput.value == "admin" && passwordInput.value == "admin123") {
     localStorage.setItem("role", "admin");
     usernameInput.style.display = "none";
     passwordInput.style.display = "none";
     loginButton.style.display = "none";
     basicText.style.display = "none";
-    adminText.style.display = "block"; // Menampilkan teks untuk admin setelah login berhasil
-  } else if (
-    usernameInput.value == "manager" &&
-    passwordInput.value == "manager123"
-  ) {
+    adminText.style.display = "block";
+  } else if (usernameInput.value == "manager" && passwordInput.value == "manager123") {
     localStorage.setItem("role", "manager");
     usernameInput.style.display = "none";
     passwordInput.style.display = "none";
     loginButton.style.display = "none";
     basicText.style.display = "none";
-    managerText.style.display = "block"; // Menampilkan teks untuk manager setelah login berhasil
-  } else if (
-    usernameInput.value == "operator" &&
-    passwordInput.value == "operator123"
-  ) {
+    managerText.style.display = "block";
+  } else if (usernameInput.value == "operator" && passwordInput.value == "operator123") {
     localStorage.setItem("role", "operator");
     usernameInput.style.display = "none";
     passwordInput.style.display = "none";
     loginButton.style.display = "none";
     basicText.style.display = "none";
-    operatorText.style.display = "block"; // Menampilkan teks untuk operator setelah login berhasil
+    operatorText.style.display = "block";
   } else {
     usernameInput.style.display = "none";
     passwordInput.style.display = "none";
@@ -42,21 +45,31 @@ function onLogin() {
     adminText.style.display = "none";
     managerText.style.display = "none";
     operatorText.style.display = "none";
-    basicText.innerText = "LOGIN SEBAGAI " + usernameInput.value; // Menampilkan teks untuk user biasa setelah login berhasil
+    basicText.innerText = "LOGIN SEBAGAI " + usernameInput.value;
     basicText.style.display = "block";
   }
 }
+
 function onLogout() {
+  var usernameInput = document.getElementById('usernameInput');
+  var passwordInput = document.getElementById('passwordInput');
+  var loginButton = document.getElementById('loginButton');
+  var logoutButton = document.getElementById('logoutButton');
+  var adminText = document.getElementById('adminText');
+  var managerText = document.getElementById('managerText');
+  var operatorText = document.getElementById('operatorText');
+  var basicText = document.getElementById('basicText');
+
   localStorage.removeItem("username");
   localStorage.removeItem("role");
-  usernameInput.value = ""; // Mengosongkan nilai input username
-  passwordInput.value = ""; // Mengosongkan nilai input password
-  logoutButton.style.display = "none"; // Menyembunyikan tombol logout setelah logout berhasil
-  usernameInput.style.display = "block"; // Menampilkan kembali input username
-  passwordInput.style.display = "block"; // Menampilkan kembali input password
-  loginButton.style.display = "block"; // Menampilkan kembali tombol login
-  adminText.style.display = "none"; // Menyembunyikan teks admin
-  managerText.style.display = "none"; // Menyembunyikan teks manager
-  operatorText.style.display = "none"; // Menyembunyikan teks operator
-  basicText.style.display = "none"; // Menyembunyikan teks user biasa
+  usernameInput.value = "";
+  passwordInput.value = "";
+  logoutButton.style.display = "none";
+  usernameInput.style.display = "block";
+  passwordInput.style.display = "block";
+  loginButton.style.display = "block";
+  adminText.style.display = "none";
+  managerText.style.display = "none";
+  operatorText.style.display = "none";
+  basicText.style.display = "none";
 }
